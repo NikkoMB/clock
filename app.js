@@ -10,7 +10,8 @@ app.listen(process.env.PORT || 8000, () => {
 });
 
 app.use('/styles.css', express.static(path.join(__dirname, '/styles.css')));
-app.use(express.static(__dirname + '/public/images'));
+app.use('/public', express.static(path.join(__dirname, '/public')));
+
 
 app.get('/', (req, res) =>{
   res.sendFile(path.join(__dirname, 'index.html'));
