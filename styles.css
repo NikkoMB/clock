@@ -1,8 +1,8 @@
-#hello{
+#time{
     margin-left: 600px;
     font-family: 'Satisfy', cursive;
     font-size: 90px;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 #date{
@@ -19,3 +19,10 @@ h1{
     font-size: 100px;
 
 }
+
+.location-timezone{
+    font-size: 40px;
+    margin-left: 550px;
+
+}
+
