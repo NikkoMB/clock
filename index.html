@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+
 
 
 </head>
 
-<body onload="startTime()" background="public/images/cork-board.png">
+<body onload="startTime()">
     <h1 id="header"></h1>
     <div class="container">
         <div id="time"></div>
@@ -21,15 +23,9 @@
     </div>
     <div class="weather">
         <div class="location">
-            <h1 class='location-timezone'>Timezone</h1>
-            <canvas class='icon' width="128" height="128"></canvas>
         </div>
         <div class='temperature'>
-            <div class='degree-section'>
-                <h2 class='temperature-degree'>34</h2>
-                <span>F</span>
-            </div>
-            <div class="temperature-description"></div>
+                <h2 class='temperature-degree'>loading data...</h2>
         </div>
     </div>
     </div>
@@ -43,6 +39,42 @@
 
     header.innerHTML = "Welcome " + name;
 
+    window.addEventListener('load', () => {
+        let long;
+        let latitude;
+
+        let temperatureDegree = document.querySelector('.temperature-degree');
+        let locationTimeZone = document.querySelector('.location-timezone');
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                long = position.coords.longitude;
+                latitude = position.coords.latitude;
+
+                const proxy = 'https://cors-anywhere.herokuapp.com/';
+                const api = `${proxy}https://api.darksky.net/forecast/dbb26b5e31beda6c48425ce1e6c306b5/${latitude},${long}`;
+
+                fetch(api)
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log(data);
+                        const { temperature, summary, icon } = data.currently;
+
+                        //
+                        temperatureDegree.textContent = Math.round(temperature) + ' °F';
+                        //
+
+
+                    });
+
+            });
+        }
+
+
+    });
+
     let hello = document.getElementById('time');
 
     function startTime() {
@@ -51,11 +83,13 @@
         let minute = now.getMinutes();
         let second = now.getSeconds();
         let ap = "am";
-        if (hour > 11) { ap = " pm"; }
+        if (hour > 11 && hour > 5) { ap = " pm"; document.body.style.backgroundImage = "url('public/images/sun.gif')";}
         if (hour > 12) { hour = hour - 12; }
+        if (hour = 0 || 1 || 2 || 3 || 4 ) {document.body.style.backgroundImage = "url('public/images/nightime.jpg')";}
+        else{ document.body.style.backgroundImage = "url('public/images/sun.gif')";}
         if (hour == 0) { hour = 12; }
         if (hour < 10)
-            if (minute < 10) { minute = "0" + minute; }
+            if (minute < 10) { "0" + minute; }
         if (second < 10) { second = "0" + second; }
         hello.innerHTML = hour + ':' + minute + ap;
         let t = setTimeout(startTime, 500);
@@ -98,7 +132,7 @@
                         const { temperature, summary, icon } = data.currently;
 
                         //
-                        temperatureDegree.textContent = temperature;
+                        temperatureDegree.textContent = Math.round(temperature) + ' °F';
                         temperatureDescription.textContent = summary;
                         locationTimeZone.textContent = data.timezone.replace(/[_]/g, ' ');
                         //

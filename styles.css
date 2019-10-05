@@ -3,26 +3,42 @@
     font-family: 'Satisfy', cursive;
     font-size: 90px;
     margin-top: 60px;
+    color: white;
 }
 
 #date{
-    margin-left: 680px;
+    margin-left: 640px;
     margin-top: 30px;
     font-family: 'Satisfy', cursive;
     font-size: 30px;
+    color: white;
 }
 
 h1{
-    margin-left: 360px;
-    margin-top: 100px;
     font-family: 'Alfa Slab One', cursive;
     font-size: 100px;
+    color: white;
+
+}
+
+#header{
+    margin-left: 500px;
+    margin-top: 100px;
+    font-family: 'Amatic SC', cursive;
 
 }
 
 .location-timezone{
     font-size: 40px;
     margin-left: 550px;
-
 }
 
+.temperature-degree{
+    margin-left: 670px;
+    color: white;
+}
+
+.temperature-description{
+    margin-left: 670px;
+    color: white;
+}
