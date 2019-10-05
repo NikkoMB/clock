@@ -15,7 +15,7 @@
 
 </head>
 
-<body onload="startTime()">
+<body onload="startTime()" background="public/images/sun.jpg">
     <h1 id="header"></h1>
     <div class="container">
         <div id="time"></div>
@@ -25,7 +25,7 @@
         <div class="location">
         </div>
         <div class='temperature'>
-                <h2 class='temperature-degree'>loading data...</h2>
+            <div class='temperature-degree'><img src="public/images/loading.gif"></div>
         </div>
     </div>
     </div>
@@ -83,13 +83,12 @@
         let minute = now.getMinutes();
         let second = now.getSeconds();
         let ap = "am";
-        if (hour > 11 && hour > 5) { ap = " pm"; document.body.style.backgroundImage = "url('public/images/sun.gif')";}
+        //let wallpaper = document.body.style.backgroundImage = "url('public/images/sun.gif')";
+        if (hour > 11) { ap = " pm";}
         if (hour > 12) { hour = hour - 12; }
-        if (hour = 0 || 1 || 2 || 3 || 4 ) {document.body.style.backgroundImage = "url('public/images/nightime.jpg')";}
-        else{ document.body.style.backgroundImage = "url('public/images/sun.gif')";}
+        if (hour === 0 || hour === 1 || hour === 2 || hour === 3 || hour === 4) { document.body.style.backgroundImage = "url('public/images/nightime.jpg')"; }
         if (hour == 0) { hour = 12; }
-        if (hour < 10)
-            if (minute < 10) { "0" + minute; }
+        if (minute < 10) { "0" + minute; }
         if (second < 10) { second = "0" + second; }
         hello.innerHTML = hour + ':' + minute + ap;
         let t = setTimeout(startTime, 500);
@@ -133,8 +132,6 @@
 
                         //
                         temperatureDegree.textContent = Math.round(temperature) + ' °F';
-                        temperatureDescription.textContent = summary;
-                        locationTimeZone.textContent = data.timezone.replace(/[_]/g, ' ');
                         //
 
 
