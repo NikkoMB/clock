@@ -47,3 +47,8 @@ h1{
 #loading{
     size: 30px;
 }
+
+body{
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
