@@ -15,7 +15,7 @@
 
 </head>
 
-<body onload="startTime()" background="public/images/sun.jpg">
+<body onload="startTime()" background="">
     <h1 id="header"></h1>
     <div class="container">
         <div id="time"></div>
@@ -92,6 +92,7 @@
         if (hour > 17) { document.body.style.backgroundImage = "url('public/images/nightime.jpg')"; }
         if (hour === 0 || hour == 1 || hour == 2 || hour == 3 || hour == 4) { document.body.style.backgroundImage = "url('public/images/nightime.jpg')"; }
         if (hour >= 0 && hour <= 11){ header.innerHTML = "Good Morning " + name};
+        if (hour >= 0 && hour <= 11){ document.body.style.backgroundImage = "url('public/images/sun.jpg')";};
         if (hour > 12) { hour = hour - 12; }
         if (hour == 0) { hour = 12; }
         if (minute.toString().length == 1) {
