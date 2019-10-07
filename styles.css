@@ -22,7 +22,7 @@ h1{
 }
 
 #header{
-    margin-left: 500px;
+    margin-left: 440px;
     margin-top: 100px;
     font-family: 'Amatic SC', cursive;
 
@@ -37,6 +37,7 @@ h1{
     margin-left: 670px;
     color: white;
     font-size: 30px;
+    margin-top: 40px;
 }
 
 .temperature-description{
@@ -52,3 +53,4 @@ body{
     background-repeat: no-repeat;
     background-size: 170%  170%; 
 }
+
