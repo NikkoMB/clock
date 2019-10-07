@@ -46,7 +46,8 @@ h1{
 }
 
 #loading{
-    size: 30px;
+    height: 200px;
+    margin-right: 80px;
 }
 
 body{
