@@ -6,7 +6,7 @@ const path = require('path');
 const app = express(); 
 
 app.listen(process.env.PORT || 8000, () => {
-    console.log('....SERVER RUNNING....');
+    console.log('....PORT 8000 SERVER RUNNING....');
 });
 
 app.use('/styles.css', express.static(path.join(__dirname, '/styles.css')));
