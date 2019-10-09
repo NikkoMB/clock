@@ -17,28 +17,28 @@
 
 <body onload="startTime()" background="">
     <div class="center">
-    <h1 id="header"></h1>
-    <div class="container">
-        <div id="time"></div>
-        <div id="date"></div>
-    </div>
-    <div class="weather">
-        <div class="location">
+        <h1 id="header"></h1>
+        <div class="container">
+            <div id="time"></div>
+            <div id="date"></div>
         </div>
-        <div class='temperature'>
-            <div class='temperature-degree'><img id="loading" src="public/images/loading.gif"></div>
+        <div class="weather">
+            <div class="location">
+            </div>
+            <div class='temperature'>
+                <div class='temperature-degree'><img id="loading" src="public/images/loading.gif"></div>
+            </div>
         </div>
+
     </div>
-    
-</div>
-</div>
+    </div>
 </body>
 
 <script>
     'USE STRICT';
 
     let name = prompt('what is your name?');
-    
+
     let header = document.getElementById('header');
 
     header.innerHTML = "Welcome " + name;
@@ -80,7 +80,7 @@
     });
 
     let hello = document.getElementById('time');
-    
+
 
     function startTime() {
         let now = new Date();
@@ -88,14 +88,14 @@
         let minute = now.getMinutes();
         let second = now.getSeconds();
         let ap = " am";
-        if (hour > 11) { ap = " pm";}
-        if(hour > 11 && hour <= 16){ header.innerHTML = "Good Afternoon " + name};
-        if(hour > 11 && hour <= 16){ document.body.style.backgroundImage = "url('public/images/afternoon.jpg')";};
-        if(hour >= 17 && hour <= 23){ header.innerHTML = "Good Evening " + name;};
+        if (hour > 11) { ap = " pm"; }
+        if (hour > 11 && hour <= 16) { header.innerHTML = "Good Afternoon " + name };
+        if (hour > 11 && hour <= 16) { document.body.style.backgroundImage = "url('public/images/afternoon.jpg')"; };
+        if (hour >= 17 && hour <= 23) { header.innerHTML = "Good Evening " + name; };
         if (hour >= 17) { document.body.style.backgroundImage = "url('public/images/nightime.jpg')"; }
-        if (hour >= 0 || hour <= 4 ) { document.body.style.backgroundImage = "url('public/images/nightime.jpg')"; }
-        if (hour >= 0 && hour <= 11){ header.innerHTML = "Good Morning " + name};
-        if (hour >= 5 && hour <= 11){ document.body.style.backgroundImage = "url('public/images/sun.jpg')";};
+        if (hour >= 0 || hour <= 4) { document.body.style.backgroundImage = "url('public/images/nightime.jpg')"; }
+        if (hour >= 0 && hour <= 11) { header.innerHTML = "Good Morning " + name };
+        if (hour >= 5 && hour <= 11) { document.body.style.backgroundImage = "url('public/images/sun.jpg')"; };
         if (hour > 12) { hour = hour - 12; }
         if (hour == 0) { hour = 12; }
         if (minute.toString().length == 1) {
@@ -116,7 +116,7 @@
     todayDate.innerHTML = today;
 
 
-    
+
 </script>
 
 </html>
