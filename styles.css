@@ -62,8 +62,11 @@ h1{
     margin-right: 100px;
 }
 
-body{
-    background-repeat: no-repeat;
-    background-size: 170%  170%; 
-}
 
+.center{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    margin-right: -50px;
+    transform: translate(-50px, -50px);
+}
