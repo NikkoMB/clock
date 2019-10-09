@@ -15,6 +15,8 @@ Deployment: Heroku
 
 Back-End Server: Node.js
 
+*DEPENDING ON YOUR BROWSER THE TEMPERATURE MIGHT NOT SHOW* 
+
 website: https://your-home-page.herokuapp.com/
 
 
