@@ -1,5 +1,4 @@
 #time{
-    margin-left: 600px;
     font-family: 'Satisfy', cursive;
     font-size: 90px;
     margin-top: 60px;
@@ -9,8 +8,6 @@
 }
 
 #date{
-    margin-left: 620px;
-    margin-top: 30px;
     font-family: 'Satisfy', cursive;
     font-size: 50px;
     color: white;
@@ -33,7 +30,6 @@ h1{
 }
 
 .temperature-degree{
-    margin-left: 670px;
     color: white;
     font-size: 30px;
     margin-top: 40px;
@@ -42,7 +38,6 @@ h1{
 }
 
 .temperature-description{
-    margin-left: 670px;
     color: white;
     text-shadow: #000 0px 0px 1px;
     -webkit-font-smoothing: antialiased;
