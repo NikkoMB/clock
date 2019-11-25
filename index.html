@@ -64,11 +64,15 @@
 <script>
     'USE STRICT';
 
-    let name = prompt('what is your name?');
+ let username = localStorage.getItem("username");
+ if(!username){
+     username = prompt("What's your name?");
+     localStorage.setItem("username", username);
+ };
 
     let header = document.getElementById('header');
 
-    header.innerHTML = "Welcome " + name;
+    header.innerHTML = "Welcome " + username;
 
     window.addEventListener('load', () => {
         let long;
