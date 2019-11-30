@@ -64,10 +64,10 @@
 <script>
     'USE STRICT';
 
- let username = localStorage.getItem("username");
+ let username = sessionStorage.getItem("username");
  if(!username){
      username = prompt("What's your name?");
-     localStorage.setItem("username", username);
+     sessionStorage.setItem("username", username);
  };
 
     let header = document.getElementById('header');
@@ -126,7 +126,7 @@
         if (hour >= 17) { document.body.style.backgroundImage = "url('public/images/nightime.jpg')"; }
         if (hour >= 0 || hour <= 4) { document.body.style.backgroundImage = "url('public/images/nightime.jpg')"; }
         if (hour >= 0 && hour <= 11) { header.innerHTML = "Good Morning " + name };
-        if (hour >= 5 && hour <= 11) { document.body.style.backgroundImage = "url('public/images/sun.jpg')"; };
+        if (hour >= 11 && hour <= 16) { document.body.style.backgroundImage = "url('public/images/sun.jpg')"; };
         if (hour > 12) { hour = hour - 12; }
         if (hour == 0) { hour = 12; }
         if (minute.toString().length == 1) {
